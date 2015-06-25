@@ -45,8 +45,8 @@ namespace AutoClicker
                     return;
                 }
 
-                var x = 800;
-                var y = 450;
+                var x = 850;
+                var y = 425;
                 var lParam = (y << 16) | (x & 0xFFFF);
 
                 PostMessage(p.MainWindowHandle, WM_LBUTTONDOWN, WM_LBUTTON, lParam);
@@ -82,7 +82,6 @@ namespace AutoClicker
             if (_running && _thread != null)
             {
                 _running = false;
-                _thread.Join();
                 _thread = null;
                 button1.Text = @"Start";
                 return;
